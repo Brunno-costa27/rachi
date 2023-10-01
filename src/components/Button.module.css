@@ -1,0 +1,22 @@
+.button {
+    background: var(--blue);
+    color: var(--white);
+    border: none;
+    box-shadow: rgba(19,125, 224, 0.5) 1px 3px 4px 0px;
+    padding: 1.1rem 2.5rem;
+    border-radius: 50px;
+    font-weight: 500;
+    font-size: 14px;
+    transition: background-color 200ms ease-out 0s;
+}  
+
+.button:hover {
+    cursor: pointer;
+    background-color: rgb(16, 143, 227);
+}
+
+@media (min-width: 768px) {
+    .button {
+        font-size: 1.7rem;
+    }
+}

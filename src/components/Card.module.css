@@ -1,0 +1,15 @@
+.button {
+    padding: 0.6rem 2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3rem;
+    font-size: 1.1rem;
+    background: var(--blue);
+    color: white;
+    border: none;
+    box-shadow: rgba(19,125, 224, 0.5) 1px 3px 4px 0px;
+    border-radius: 50px;
+    font-weight: 500;
+    font-size: 14px;
+    transition: background-color 200ms ease-out 0s;
+}
+

@@ -1,0 +1,56 @@
+:root {
+    --background: #FFFFFF;
+    --backgroundSecondary: #EFF8FF;
+    --textTitle: #293145;
+    --textSubtitle: #6E7275;
+    --blue: #0F9AFE;
+    --white: #FFFFFF;
+    --highlightedCardBackground: #32394B;
+    --highlightedCardHover: #464F65;
+    --highlightedCardText: #DBDBDB;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: background-color 100ms ease-in-out 0s;
+}
+
+body {
+    font-size: 1.6rem;
+    background-color: var(--background);
+}
+
+
+a, button, p, input {
+    font-family: Inter, sans-serif;
+}
+
+h1, h2, h3, span {
+    font-family: Sora, sans-serif
+}
+
+ul, li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+@media (min-width: 1024px) {
+    html {
+        font-size: 75%;
+    }
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 68.75%;
+    }
+}

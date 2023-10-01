@@ -1,0 +1,153 @@
+.container {
+    display: flex;
+    justify-content: center;
+    max-width: 100vw;
+    width: 100%;
+    height: 70px;
+    position: sticky;
+    top: 0;
+    z-index: 99;
+    background: var(--background);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 16px -4px; 
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0px 20px;
+}
+
+.header img {
+    max-width: 100px;
+}
+
+.header ul {
+    display: flex;
+    gap: 3.2rem;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.header a {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: var(--textSubtitle);
+    position: relative;
+}
+
+.header a:hover::after {
+    width: 100%;
+}
+
+.header a::after {
+    display: block;
+    content: "";
+    width: 0px;
+    height: 3.5px;
+    background: var(--blue);
+    margin: auto;
+    position: absolute;
+    left: 0px;
+    transition: width 0.4s ease 0s;
+}
+
+
+
+/* Estilos para o tema claro */
+ .light {
+    background: #fff;
+    color: #6E7275;
+}
+  
+  /* Estilos para o tema escuro */
+.dark {
+    background-color: #293145;
+    color: #fff;
+}
+
+.dark .header a {
+    color: #DBDBDB;
+}
+
+  /* Estilos para o controle de alternância */
+  .themeToggle {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 30px;
+  }
+  
+  .themeToggle input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    border-radius: 30px;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: '';
+    height: 22px;
+    width: 22px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    border-radius: 50%;
+  }
+  
+  input:checked + .slider {
+    background-color: var(--blue);
+  }
+  
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+
+ 
+
+
+
+@media (min-width: 768px) {
+    .header {
+        max-width: 1320px;
+    }
+}
+
+@media (min-width: 768px) {
+    .header ul {
+        display: flex;
+    }
+}
+
+
+/* styles.css */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px); /* Opcional: para adicionar um efeito de deslocamento vertical */
+  transition: opacity 0.5s ease, transform 0.5s ease; /* Ajuste a duração e a função de transição conforme necessário */
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}

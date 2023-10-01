@@ -1,0 +1,105 @@
+.section {
+    padding: 50px 0px;
+}
+
+.title {
+    text-align: center;
+    color: var(--textTitle);
+    animation: fade-in 1s ease forwards;
+    
+}
+
+
+.container {
+    padding-top: 50px;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    justify-content: center;
+    margin: 0 313px;
+    animation: fade-in 1s ease-in-out forwards;
+}
+
+.container div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.container div svg {
+   width: 5.7rem;
+   height: 5.7rem;
+}
+
+.container div h3 {
+    color: var(--texTitle);
+    margin: 25px 0px 15px;
+ }
+
+ .container div p {
+    color: var(--textSubtitle);
+    max-width: 300px;
+    line-height: 26px;
+ }
+
+ /* Estilos para o tema claro */
+.light {
+    background: #FFF;
+}
+  
+  /* Estilos para o tema escuro */
+.dark {
+    background-color: #293145;
+    color: #fff;
+}
+
+.dark h2 {
+    color: #fff;
+}
+
+.dark div p {
+    color: #DBDBDB;
+}
+
+ .fade {
+    color: red;
+    opacity: 0; 
+    transform: translateY(100px); 
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+
+
+
+  .visible {
+    opacity: 1;
+    transform: translateY(0); 
+}
+
+@keyframes fade-in {
+    from {
+      opacity: 0; /* Começa com opacidade 0 */
+      transform: translateY(100px); /* Inicia 20px abaixo da posição normal */
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    to {
+      opacity: 1; /* Termina com opacidade 1 */
+      transform: translateY(0); /* Retorna à posição normal */
+    }
+  }
+
+@media (min-width: 1024px) {
+    .container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* @media (min-width: 768px) {
+    .container {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 1280px;
+    }
+} */
