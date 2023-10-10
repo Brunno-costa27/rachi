@@ -18,6 +18,10 @@
     animation-duration: 2s;
 }
 
+.dark {
+  color: '#fff';
+}
+
 @keyframes flipInX {
     from {
       transform: perspective(2500px) rotatey(90deg);

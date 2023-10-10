@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { Button } from "./Button";
 import style from './Card.module.css'
 
-export function Card({animate, backgroundColor, height, buttonLabel, title, price}) {
+export function Card({isDarkTheme, animate, backgroundColor, height, buttonLabel, title, price}) {
 
     let cardColor = '#293145'
 
@@ -44,15 +44,27 @@ export function Card({animate, backgroundColor, height, buttonLabel, title, pric
     }, []);
 
 
-    const divStyle = {
-        backgroundColor: hovered ? backgroundColor : '#464f65',
+    const cardStylePrata = {
+        backgroundColor: hovered ? backgroundColor : '#32394b',
         height: `${height}px`,
         transition: 'background-color 0.3s ease'
       };
 
+    const cardBackground = {
+        backgroundColor: '#32394b'
+    }  
+
+    const darColor = {
+        color: '#fff'
+    }
+
+    const lightColor = {
+        color: '#fff'
+    }
+
     return (
             <div
-                style={!animate ? divStyle : null}
+                style={!animate ? cardStylePrata : (isDarkTheme ? cardBackground : lightColor)} // Aqui é o único card preto
                 onMouseEnter={() => setHovered(false)}
                 onMouseLeave={() => setHovered(true)}
                 ref={elementoRefContainer}
@@ -63,7 +75,7 @@ export function Card({animate, backgroundColor, height, buttonLabel, title, pric
                 // }}
             >
                 <header>
-                    <h3 style={{ color: cardColor }}>{title}</h3>
+                    <h3 style={isDarkTheme ?  darColor : lightColor }>{title}</h3>
                     <>
                         {cardColor === '#fff' ? (
                             <button className={style.button}>Preferido</button>
@@ -71,14 +83,14 @@ export function Card({animate, backgroundColor, height, buttonLabel, title, pric
                             <></>
                         )} 
                     </>
-                    <h4 style={{ color: cardColor }}>
+                    <h4 style={isDarkTheme ?  darColor : lightColor }>
                         <span>R$</span>
                            {price}
                         <span>/Mês</span>
                     </h4>
                 </header>
 
-                <p style={{ color: cardColor }}>
+                <p  style={isDarkTheme ?  darColor : lightColor }>
                 Lorem ipsum dolor sit amet, consectetur adipiscing 
                 elit. Donec lacinia mi quis euismod ultrices.
                 </p>

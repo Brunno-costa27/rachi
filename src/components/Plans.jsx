@@ -51,6 +51,7 @@ export function Plans({isDarkTheme}) {
                 {/* Aqui vai os cards */}
                 <div className={style.grid}>
                     <Card
+                        isDarkTheme={isDarkTheme}
                         animate={true}
                         backgroundColor='#EFF8FF'
                         height={540}
@@ -59,14 +60,16 @@ export function Plans({isDarkTheme}) {
                         price='28'
                     />
                     <Card
+                        isDarkTheme={isDarkTheme}
                         animate={false}
-                        backgroundColor='#32394B'
+                        backgroundColor='#464f65'
                         height={564}
                         buttonLabel='Assinar'
                         title='Prata'
                         price='57'
                     />
                     <Card
+                        isDarkTheme={isDarkTheme}
                         animate={true}
                         backgroundColor='#EFF8FF'
                         height={540}
