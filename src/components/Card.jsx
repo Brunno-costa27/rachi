@@ -11,6 +11,7 @@ export function Card({animate, backgroundColor, height, buttonLabel, title, pric
     }
 
     const [isVisible, setIsVisible] = useState(false);
+    const [hovered, setHovered] = useState(true);
 
     // Crie uma referência para o elemento que você deseja acessar
     const elementoRefContainer = useRef(null);
@@ -42,17 +43,24 @@ export function Card({animate, backgroundColor, height, buttonLabel, title, pric
     handleScroll();
     }, []);
 
-    console.log(animate);
-    console.log(isVisible);
+
+    const divStyle = {
+        backgroundColor: hovered ? backgroundColor : '#464f65',
+        height: `${height}px`,
+        transition: 'background-color 0.3s ease'
+      };
 
     return (
             <div
+                style={!animate ? divStyle : null}
+                onMouseEnter={() => setHovered(false)}
+                onMouseLeave={() => setHovered(true)}
                 ref={elementoRefContainer}
                 className={animate && isVisible ? style.card : style.content}
-                style={{
-                     backgroundColor: backgroundColor,
-                     height: `${height}px`,
-                }}
+                // style={{
+                //      backgroundColor: backgroundColor,
+                //      height: `${height}px`,
+                // }}
             >
                 <header>
                     <h3 style={{ color: cardColor }}>{title}</h3>
