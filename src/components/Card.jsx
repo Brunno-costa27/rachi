@@ -1,18 +1,54 @@
+import { useEffect, useRef, useState } from "react";
 import { Button } from "./Button";
 import style from './Card.module.css'
 
-export function Card({backgroundColor, height, buttonLabel, title, price}) {
+export function Card({animate, backgroundColor, height, buttonLabel, title, price}) {
 
     let cardColor = '#293145'
 
     if(title === 'Prata'){
-        console.log('oi');
         cardColor = '#fff'
     }
 
+    const [isVisible, setIsVisible] = useState(false);
+
+    // Crie uma referência para o elemento que você deseja acessar
+    const elementoRefContainer = useRef(null);
+
+
+    useEffect(() => {
+
+    const handleScroll = () => {
+
+      const element = elementoRefContainer.current // Substitua pela classe do seu componente
+
+
+      const windowHeight = window.innerHeight
+      const itemTop = element.getBoundingClientRect().top
+      if (itemTop > windowHeight) {
+        console.log('não aparece');
+        setIsVisible(false);
+      }else if(itemTop < windowHeight){
+        console.log(windowHeight);
+        // Use uma função anônima com setTimeout
+            setIsVisible(true);
+
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    // Verifique a visibilidade inicial quando o componente for montado
+    handleScroll();
+    }, []);
+
+    console.log(animate);
+    console.log(isVisible);
+
     return (
-            <div 
-                className={style.content}
+            <div
+                ref={elementoRefContainer}
+                className={animate && isVisible ? style.card : style.content}
                 style={{
                      backgroundColor: backgroundColor,
                      height: `${height}px`,

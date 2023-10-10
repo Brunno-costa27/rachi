@@ -13,3 +13,29 @@
     transition: background-color 200ms ease-out 0s;
 }
 
+.card {
+    animation-name: flipInX;
+    animation-duration: 2s;
+}
+
+@keyframes flipInX {
+    from {
+      transform: perspective(2500px) rotatey(90deg);
+      animation-timing-function: ease;
+      opacity: 0;
+    }
+    /* 40% {
+      transform: perspective(2500px) rotatey(-20deg);
+      animation-timing-function: ease;
+    } */
+    /* 60% {
+      transform: perspective(2500px) rotatey(10deg);
+      opacity: 1;
+    } */
+    /* 80% {
+      transform: perspective(2500px) rotatey(-5deg);
+    } */
+    to {
+      transform: perspective(2500px);
+    }
+  }
