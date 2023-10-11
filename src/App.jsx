@@ -6,6 +6,7 @@ import './global.css'
 import { Funcionality } from './components/Functionality';
 import { Aplication } from './components/Aplication';
 import { Plans } from './components/Plans';
+import { Contato } from './components/Contato';
 
 export function App() {
 
@@ -41,6 +42,10 @@ export function App() {
 
         <Plans
           isDarkTheme={appState}
+        />
+
+        <Contato
+          text="Enviar"
         />
       </main>
     </>

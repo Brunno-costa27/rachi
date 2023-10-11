@@ -45,37 +45,45 @@ export function Card({isDarkTheme, animate, backgroundColor, height, buttonLabel
 
 
     const cardStylePrata = {
-        backgroundColor: hovered ? backgroundColor : '#32394b',
+        backgroundColor: hovered ? backgroundColor : '#222736',
         height: `${height}px`,
         transition: 'background-color 0.3s ease'
       };
 
-    const cardBackground = {
-        backgroundColor: '#32394b'
-    }  
+    const cardStyleNormalDark = {
+    backgroundColor: '#32394b',
+    color: '#293145',
+    height: `${height}px`,
+    };  
+
+    const cardStyleNormal = {
+        backgroundColor: '#EFF8FF',
+        color: '#293145',
+        height: `${height}px`,
+        };  
+
+    // const cardBackground = {
+    //     backgroundColor: '#32394b'
+    // }  
 
     const darColor = {
         color: '#fff'
     }
 
     const lightColor = {
-        color: '#fff'
+        color: '#293145'
     }
 
     return (
             <div
-                style={!animate ? cardStylePrata : (isDarkTheme ? cardBackground : lightColor)} // Aqui é o único card preto
+                style={!animate ? cardStylePrata : (isDarkTheme ? cardStyleNormalDark : cardStyleNormal)} // Aqui é o único card preto
                 onMouseEnter={() => setHovered(false)}
                 onMouseLeave={() => setHovered(true)}
                 ref={elementoRefContainer}
                 className={animate && isVisible ? style.card : style.content}
-                // style={{
-                //      backgroundColor: backgroundColor,
-                //      height: `${height}px`,
-                // }}
             >
                 <header>
-                    <h3 style={isDarkTheme ?  darColor : lightColor }>{title}</h3>
+                    <h3 style={isDarkTheme || !animate ?  darColor : lightColor }>{title}</h3>
                     <>
                         {cardColor === '#fff' ? (
                             <button className={style.button}>Preferido</button>
@@ -83,14 +91,14 @@ export function Card({isDarkTheme, animate, backgroundColor, height, buttonLabel
                             <></>
                         )} 
                     </>
-                    <h4 style={isDarkTheme ?  darColor : lightColor }>
+                    <h4 style={isDarkTheme || !animate ?  darColor : lightColor }>
                         <span>R$</span>
                            {price}
                         <span>/Mês</span>
                     </h4>
                 </header>
 
-                <p  style={isDarkTheme ?  darColor : lightColor }>
+                <p  style={isDarkTheme || !animate ?  darColor : lightColor }>
                 Lorem ipsum dolor sit amet, consectetur adipiscing 
                 elit. Donec lacinia mi quis euismod ultrices.
                 </p>
