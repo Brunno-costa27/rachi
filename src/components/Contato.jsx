@@ -1,10 +1,44 @@
+import { useEffect, useRef, useState } from 'react';
 import { Button } from './Button'
 import style from './Contato.module.css'
 
 export function Contato({text}) {
+
+    const [isVisible, setIsVisible] = useState(false);
+
+    // Crie uma referência para o elemento que você deseja acessar
+    const elementoRefContainer = useRef(null);
+
+
+    useEffect(() => {
+
+    const handleScroll = () => {
+
+      const element = elementoRefContainer.current // Substitua pela classe do seu componente
+
+
+      const windowHeight = window.innerHeight
+      const itemTop = element.getBoundingClientRect().top
+      if (itemTop > windowHeight) {
+        console.log('não aparece');
+        setIsVisible(false);
+      }else if(itemTop < windowHeight){
+        console.log(windowHeight);
+        // Use uma função anônima com setTimeout
+            setIsVisible(true);
+
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    // Verifique a visibilidade inicial quando o componente for montado
+    handleScroll();
+    }, []);
+
     return (
        <section className={style.section}>
-         <div className={style.container}>
+         <div ref={elementoRefContainer} className={` ${isVisible ? style.container : style.fade}`}>
             <header>
                 <h2>Contato</h2>
                 <p>

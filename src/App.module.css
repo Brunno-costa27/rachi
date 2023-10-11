@@ -6,3 +6,20 @@
 .visible {
     opacity: 1;
   }
+
+.footer {
+  background: #293145;
+  padding: 2rem;
+  text-align: center;
+}
+
+.footer span{
+  font-size: 1.4rem;
+  color: #fff;
+}
+
+.footer a{
+  font-weight: 700;
+  color: #0f9afe;
+  position: relative;
+}
