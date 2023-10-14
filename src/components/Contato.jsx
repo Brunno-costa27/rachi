@@ -20,10 +20,8 @@ export function Contato({text}) {
       const windowHeight = window.innerHeight
       const itemTop = element.getBoundingClientRect().top
       if (itemTop > windowHeight) {
-        console.log('não aparece');
         setIsVisible(false);
       }else if(itemTop < windowHeight){
-        console.log(windowHeight);
         // Use uma função anônima com setTimeout
             setIsVisible(true);
 

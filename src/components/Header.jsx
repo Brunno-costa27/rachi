@@ -4,13 +4,19 @@ import LogoDark from '../assets/logo-dark.svg'
 import Logolight from '../assets/logo-light.svg'
 
 
-export function Header({ onChange }) {
+export function Header({ onChange , onChangeToggle}) {
 
     const [isDarkTheme, setIsDarkTheme] = useState(false);
+    const [isOpen, setIsOpen] = useState(false);
 
     const toggleTheme = () => {
         setIsDarkTheme(!isDarkTheme);
         onChange(!isDarkTheme)
+    };
+
+    const toggle = () => {
+      setIsOpen(!isOpen)
+      onChangeToggle(!isOpen)
     };
 
     return (
@@ -20,6 +26,29 @@ export function Header({ onChange }) {
         <div className={style.header}>
             <img src={isDarkTheme ? LogoDark : Logolight} alt="Rachi logo" />
           {/* Aqui é um botão para responsividade */}
+
+          {!isOpen ? (
+            
+              <>
+              <button onClick={toggle}>
+                <svg stroke="currentColor" 
+                    fill="none" strokeWidth="2" 
+                    viewBox="0 0 24 24" strokeLinecap="round" 
+                    strokeLinejoin="round" 
+                    className={style.toggle} 
+                    height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>
+                    
+                </svg>
+            </button>
+              </>
+          ): (
+          <>
+           <button onClick={toggle}>
+              <svg stroke="currentColor" fill="none" strokeWidth="2" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round" className={style.toggle} height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+           </button>
+            </>
+          )}
+
             <ul>
               <li>
                 <a href="Funcionalidades">Funcionalidades</a>

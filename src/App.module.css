@@ -23,3 +23,49 @@
   color: #0f9afe;
   position: relative;
 }
+
+
+@media (max-width: 768px) {
+  .menu ul {
+    display: flex;
+    z-index: 1;
+    flex-direction: column;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    top: 0;
+    left: 0;
+    background: #293145;
+    margin-top: 70px;
+    height: calc(100vh - 70px);
+    width: 100%;
+    animation: 500ms ease 0s 1 normal none running fade;
+  }
+  
+  .menu a {
+    color: #fff;
+    font-weight: 500;
+  
+  }
+}
+
+@media (min-width: 768px) {
+  .menu ul {
+    display: none;
+  }
+  
+ 
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+    transform: translateY(40%);
+  }
+  100% {
+
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}

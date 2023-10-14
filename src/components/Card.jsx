@@ -27,10 +27,8 @@ export function Card({isDarkTheme, animate, backgroundColor, height, buttonLabel
       const windowHeight = window.innerHeight
       const itemTop = element.getBoundingClientRect().top
       if (itemTop > windowHeight) {
-        console.log('não aparece');
         setIsVisible(false);
       }else if(itemTop < windowHeight){
-        console.log(windowHeight);
         // Use uma função anônima com setTimeout
             setIsVisible(true);
 
@@ -61,10 +59,7 @@ export function Card({isDarkTheme, animate, backgroundColor, height, buttonLabel
         color: '#293145',
         height: `${height}px`,
         };  
-
-    // const cardBackground = {
-    //     backgroundColor: '#32394b'
-    // }  
+ 
 
     const darColor = {
         color: '#fff'
@@ -98,7 +93,7 @@ export function Card({isDarkTheme, animate, backgroundColor, height, buttonLabel
                     </h4>
                 </header>
 
-                <p  style={isDarkTheme || !animate ?  darColor : lightColor }>
+                <p style={isDarkTheme || !animate ?  darColor : lightColor }>
                 Lorem ipsum dolor sit amet, consectetur adipiscing 
                 elit. Donec lacinia mi quis euismod ultrices.
                 </p>

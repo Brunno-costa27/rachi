@@ -9,6 +9,7 @@
     z-index: 99;
     background: var(--background);
     box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 16px -4px; 
+    overflow: hidden;
 }
 
 .header {
@@ -53,6 +54,7 @@
     left: 0px;
     transition: width 0.4s ease 0s;
 }
+
 
 
 
@@ -124,27 +126,86 @@
   }
 
 
-@media (min-width: 768px) {
-    .header {
-        max-width: 1320px;
-    }
-}
+  
+  
+  /* styles.css */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px); /* Opcional: para adicionar um efeito de deslocamento vertical */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Ajuste a duração e a função de transição conforme necessário */
+  }
+  
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
 
-@media (min-width: 768px) {
+/* Quando for maior que 768px  */
+  @media (min-width: 768px) { 
+      .header {
+          max-width: 1320px;
+      } 
+
+      .toggle {
+        display: none;
+      }
+
+      button {
+        display: none;
+      }
+  }
+
+  /* De 0px até 768 */
+  @media (max-width: 768px) {
+      .container {
+        width: 100%;
+      }
+
+      .header ul {
+        display: none;
+      }
+
+    .toggle {
+      display: block;
+      color: #fff;
+      width: 32px;
+      height: 32px;
+    }
+
+    button {
+      display: flex;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+    }
+
+  }
+  
+
+   /* De 0px até 768 */
+   @media (max-width: 520px) {
+    .container {
+      width: 100%;
+    }
+
     .header ul {
-        display: flex;
+      display: none;
     }
+
+  .toggle {
+    display: block;
+    color: #fff;
+    width: 32px;
+    height: 32px;
+  }
+
+  button {
+    display: flex;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  }
+
 }
 
-
-/* styles.css */
-.fade-in {
-  opacity: 0;
-  transform: translateY(20px); /* Opcional: para adicionar um efeito de deslocamento vertical */
-  transition: opacity 0.5s ease, transform 0.5s ease; /* Ajuste a duração e a função de transição conforme necessário */
-}
-
-.fade-in.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
+ 
