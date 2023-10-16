@@ -39,9 +39,6 @@ export function App() {
   }, []);
 
 
-  console.log(isOpen);
-  
-  
 
   return (
 

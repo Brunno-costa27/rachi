@@ -81,7 +81,9 @@ export function Card({isDarkTheme, animate, backgroundColor, height, buttonLabel
                     <h3 style={isDarkTheme || !animate ?  darColor : lightColor }>{title}</h3>
                     <>
                         {cardColor === '#fff' ? (
-                            <button className={style.button}>Preferido</button>
+                            <Button 
+                                text="Preferido"
+                            />
                         ): (
                             <></>
                         )} 
