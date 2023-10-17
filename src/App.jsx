@@ -45,7 +45,7 @@ export function App() {
     <>
       {loading ? (
         <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100vh'}}>
-          <BarLoader color={"#6E7275"} size={50} />
+          <BarLoader color={"#0f9afe"} size={50} />
         </div>
       ) : (
         <>

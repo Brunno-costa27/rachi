@@ -58,6 +58,8 @@
 
 
 
+
+
 /* Estilos para o tema claro */
  .light {
     background: #fff;
@@ -143,7 +145,7 @@
 /* Quando for maior que 768px  */
   @media (min-width: 768px) { 
       .header {
-          max-width: 1320px;
+        max-width: 1320px;
       } 
 
       .toggle {
@@ -168,6 +170,13 @@
     .toggle {
       display: block;
       color: #fff;
+      width: 32px;
+      height: 32px;
+    }
+
+    .toggleDark {
+      display: block;
+      color: #000;
       width: 32px;
       height: 32px;
     }
