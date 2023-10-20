@@ -39,13 +39,25 @@ export function App() {
   }, []);
 
 
+  const toggleTheme = () => {
+    setAppState(!appState);
+  };
+
+console.log(appState);
 
   return (
 
     <>
       {loading ? (
-        <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100vh'}}>
-          <BarLoader color={"#0f9afe"} size={50} />
+        <div 
+            style=
+            {{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center', height: '100vh'
+            }}
+        >
+            <BarLoader color={"#0f9afe"} size={50} />
         </div>
       ) : (
         <>
@@ -56,38 +68,40 @@ export function App() {
         
           <main>
 
-            {isOpen ? (
-               <div className={style.menu}>
+            {/* {!isOpen ? (
+               <>
+                <div className={style.menu + ` ${appState ? style.dark : style.light}`}>
                    <ul>
-              <li>
-                <a href="Funcionalidades">Funcionalidades</a>
-              </li>
-              <li>
-                <a href="App">App</a>
-              </li>
-              <li>
-              <a href="Planos">Planos</a>
-              </li>
-              <li>
-                <a href="Contato">Contato</a>
-              </li>
+                      <li>
+                        <a href="Funcionalidades">Funcionalidades</a>
+                      </li>
+                      <li>
+                        <a href="App">App</a>
+                      </li>
+                      <li>
+                      <a href="Planos">Planos</a>
+                      </li>
+                      <li>
+                        <a href="Contato">Contato</a>
+                      </li>
+                      <div className={appState ? style.dark : style.light}>
+                        <label className={style.themeToggle}>
+                          <input
+                            type="checkbox"
+                            checked={appState}
+                            onChange={toggleTheme}
+                          />
+                          <span className={style.slider}></span>
+                        </label>
+                      </div>
+                   </ul>
 
-              {/* <div className={teste ? style.dark : style.light}>
-                <label className={style.themeToggle}>
-                  <input
-                    type="checkbox"
-                    checked={teste}
-                    onChange={appState}
-                  />
-                  <span className={style.slider}></span>
-                </label>
-             </div> */}
 
-            </ul>
                </div>
+               </>
             ): (
               <></>
-            )}
+            )} */}
 
             <ContentMain
               text='Cadastre-se'

@@ -61,7 +61,7 @@
 
 
 /* Estilos para o tema claro */
- .light {
+ .light .menu ul {
     background: #fff;
     color: #6E7275;
 }
@@ -72,8 +72,17 @@
     color: #fff;
 }
 
-.dark .header a {
+.dark .menu ul {
     color: #DBDBDB;
+    background: #293145
+}
+
+.dark .menu a {
+  color: #DBDBDB;
+}
+
+.light .menu a {
+  color: #6e7275;
 }
 
   /* Estilos para o controle de alternância */
@@ -128,7 +137,6 @@
   }
 
 
-  
   
   /* styles.css */
   .fade-in {
@@ -191,7 +199,7 @@
   }
   
 
-   /* De 0px até 768 */
+   /* De 0px até 520px */
    @media (max-width: 520px) {
     .container {
       width: 100%;
@@ -201,12 +209,21 @@
       display: none;
     }
 
-  .toggle {
-    display: block;
-    color: #fff;
-    width: 32px;
-    height: 32px;
-  }
+    .toggle {
+      display: block;
+      color: #fff;
+      width: 32px;
+      height: 32px;
+    }
+
+    .menu ul {
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    
+
+
 
   button {
     display: flex;
@@ -217,4 +234,45 @@
 
 }
 
+@media (min-width: 768px) {
+  .menu ul {
+    display: none;
+  }
+}
  
+@media (max-width: 768px) {
+  .menu ul {
+    display: flex;
+    z-index: 1;
+    flex-direction: column;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    top: 0;
+    left: 0;
+    background: var(--background);
+    margin-top: 70px;
+    height: calc(100vh - 70px);
+    width: 100%;
+    animation: 700ms ease fade;
+  }
+
+  .menu a {
+    font-size: 2rem;
+  }
+  
+
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+    transform: translateY(40%);
+  }
+  100% {
+
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
