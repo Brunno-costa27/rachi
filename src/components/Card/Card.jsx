@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Button } from "./Button";
+import { Button } from "../Button/Button";
 import style from './Card.module.css'
 
 export function Card({isDarkTheme, animate, backgroundColor, height, buttonLabel, title, price}) {

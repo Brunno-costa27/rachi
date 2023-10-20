@@ -129,15 +129,12 @@
     background-color: var(--blue);
   }
   
-  
   input:checked + .slider:before {
     -webkit-transform: translateX(26px);
     -ms-transform: translateX(26px);
     transform: translateX(26px);
   }
 
-
-  
   /* styles.css */
   .fade-in {
     opacity: 0;
@@ -197,7 +194,6 @@
     }
 
   }
-  
 
    /* De 0px até 520px */
    @media (max-width: 520px) {
@@ -222,9 +218,6 @@
     }
 
     
-
-
-
   button {
     display: flex;
     background: transparent;
@@ -262,7 +255,6 @@
     font-size: 2rem;
   }
   
-
 }
 
 @keyframes fade {

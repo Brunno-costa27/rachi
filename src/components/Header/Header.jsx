@@ -1,8 +1,7 @@
 import { useState } from 'react';
 import style from './Header.module.css';
-import LogoDark from '../assets/logo-dark.svg'
-import Logolight from '../assets/logo-light.svg'
-
+import LogoDark from '../../assets/logo-dark.svg'
+import Logolight from '../../assets/logo-light.svg'
 
 export function Header({ onChange , onChangeToggle, outro}) {
 
@@ -28,7 +27,6 @@ export function Header({ onChange , onChangeToggle, outro}) {
         <div className={style.header}>
             <img src={isDarkTheme ? LogoDark : Logolight} alt="Rachi logo" />
           {/* Aqui é um botão para responsividade */}
-
           {!isOpen ? (
               <>
                 <button onClick={toggle}>
@@ -84,11 +82,6 @@ export function Header({ onChange , onChangeToggle, outro}) {
                </button>
               </>
           )}
-
-
-
-
-
 
             <ul>
               <li>

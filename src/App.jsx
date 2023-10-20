@@ -1,35 +1,23 @@
 import style from './App.module.css'
 import { useState, useEffect } from 'react';
-import { ContentMain } from './components/ContentMain'
-import { Header } from './components/Header'
+import { ContentMain } from './components/ContantMain/ContentMain'
+import { Header } from './components/Header/Header'
 import './global.css'
-import { Funcionality } from './components/Functionality';
-import { Aplication } from './components/Aplication';
-import { Plans } from './components/Plans';
-import { Contato } from './components/Contato';
+import { Funcionality } from './components/Funcionality/Functionality';
+import { Aplication } from './components/Aplication/Aplication';
+import { Plans } from './components/Plans/Plans';
+import { Contato } from './components/Contato/Contato';
 import BarLoader from "react-spinners/BarLoader";
 
 export function App() {
 
-
-
   const [appState, setAppState] = useState('');
   const [loading, setLoading] = useState(true);
-  const [isOpen, setIsOpen] = useState(false);
-
 
   function handleHeaderChange(newValue) {
     // Atualize o estado do componente App com o valor do Header
     setAppState(newValue);
   }
-
-  function handleHeaderChangeToggle(value) {
-    // Atualize o estado do componente App com o valor do Header
-    setIsOpen(value);
-  }
-
-
-
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -38,12 +26,6 @@ export function App() {
     return () => clearTimeout(timer);
   }, []);
 
-
-  const toggleTheme = () => {
-    setAppState(!appState);
-  };
-
-console.log(appState);
 
   return (
 
@@ -63,45 +45,9 @@ console.log(appState);
         <>
           <Header
             onChange={handleHeaderChange}
-            onChangeToggle={handleHeaderChangeToggle}
           />  
         
           <main>
-
-            {/* {!isOpen ? (
-               <>
-                <div className={style.menu + ` ${appState ? style.dark : style.light}`}>
-                   <ul>
-                      <li>
-                        <a href="Funcionalidades">Funcionalidades</a>
-                      </li>
-                      <li>
-                        <a href="App">App</a>
-                      </li>
-                      <li>
-                      <a href="Planos">Planos</a>
-                      </li>
-                      <li>
-                        <a href="Contato">Contato</a>
-                      </li>
-                      <div className={appState ? style.dark : style.light}>
-                        <label className={style.themeToggle}>
-                          <input
-                            type="checkbox"
-                            checked={appState}
-                            onChange={toggleTheme}
-                          />
-                          <span className={style.slider}></span>
-                        </label>
-                      </div>
-                   </ul>
-
-
-               </div>
-               </>
-            ): (
-              <></>
-            )} */}
 
             <ContentMain
               text='Cadastre-se'

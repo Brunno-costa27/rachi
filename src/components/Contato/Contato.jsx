@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { Button } from './Button'
+import { Button } from '../Button/Button'
 import style from './Contato.module.css'
 
 export function Contato({text}) {

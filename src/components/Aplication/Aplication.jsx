@@ -1,10 +1,8 @@
 import style from './Aplication.module.css';
-import appStore from '../assets/app-store.svg'
-import playStore from '../assets/play-store.svg'
-import appIlustration from '../assets/app-illustration.svg'
+import appStore from '../../assets/app-store.svg'
+import playStore from '../../assets/play-store.svg'
+import appIlustration from '../../assets/app-illustration.svg'
 import { useEffect, useRef, useState } from 'react';
-
-
 
 export function Aplication({ isDarkTheme }) {
 
@@ -13,23 +11,22 @@ export function Aplication({ isDarkTheme }) {
     // Crie uma referência para o elemento que você deseja acessar
     const elementoRefContainer = useRef(null);
 
-
     useEffect(() => {
 
     const handleScroll = () => {
 
-      const element = elementoRefContainer.current // Substitua pela classe do seu componente
+    const element = elementoRefContainer.current // Substitua pela classe do seu componente
 
 
-      const windowHeight = window.innerHeight
-      const itemTop = element.getBoundingClientRect().top
-      if (itemTop > windowHeight) {
-        setIsVisible(false);
-      }else if(itemTop < windowHeight){
-        // Use uma função anônima com setTimeout
-            setIsVisible(true);
+    const windowHeight = window.innerHeight
+    const itemTop = element.getBoundingClientRect().top
+    if (itemTop > windowHeight) {
+    setIsVisible(false);
+    } else if(itemTop < windowHeight){
+    // Use uma função anônima com setTimeout
+        setIsVisible(true);
 
-      }
+    }
     };
 
     window.addEventListener('scroll', handleScroll);

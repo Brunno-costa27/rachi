@@ -7,7 +7,6 @@
     opacity: 1;
   }
 
-
 /* Estilos para o tema claro */
  .light {
     background: #fff;
@@ -75,9 +74,6 @@
     transform: translateX(26px);
   }
 
-
-
-
 .footer {
   background: #293145;
   padding: 2rem;
@@ -95,8 +91,6 @@
   position: relative;
 }
 
-
-
     /* Estilos para o tema claro */
   .light {
     background: #fff;
@@ -108,8 +102,6 @@
     background-color: #293145;
     color: #fff;
   }
-
-
 
 
 @media (max-width: 768px) {

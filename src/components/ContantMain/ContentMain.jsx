@@ -1,11 +1,9 @@
 import style from './ContentMain.module.css'
-import HeroIlustration from '../assets/hero-illustration.svg';
-import { Button } from './Button';
+import HeroIlustration from '../../assets/hero-illustration.svg';
+import { Button } from '../Button/Button';
 
 
 export function ContentMain({ text, isDarkTheme }) {
-
-  
 
     return (
         <section className={style.section + ` ${isDarkTheme ? style.dark : style.light}`}>
