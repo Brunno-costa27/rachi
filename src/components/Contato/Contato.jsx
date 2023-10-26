@@ -35,7 +35,7 @@ export function Contato({text}) {
     }, []);
 
     return (
-       <section className={style.section}>
+       <section id='Contato' className={style.section}>
          <div ref={elementoRefContainer} className={` ${isVisible ? style.container : style.fade}`}>
             <header>
                 <h2>Contato</h2>

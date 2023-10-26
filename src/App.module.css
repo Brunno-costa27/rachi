@@ -103,6 +103,23 @@
     color: #fff;
   }
 
+  .scrollToTopButton {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #0f9AFE;
+    color: #fff;
+    border: none;
+    border-radius: 100%;
+    padding: 7px 9px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  .scrollToTopButton:hover {
+    background-color: #0056b3;
+  }
+
 
 @media (max-width: 768px) {
 

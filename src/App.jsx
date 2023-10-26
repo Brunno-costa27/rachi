@@ -8,6 +8,7 @@ import { Aplication } from './components/Aplication/Aplication';
 import { Plans } from './components/Plans/Plans';
 import { Contato } from './components/Contato/Contato';
 import BarLoader from "react-spinners/BarLoader";
+import {RxChevronUp} from 'react-icons/rx'
 
 export function App() {
 
@@ -18,6 +19,13 @@ export function App() {
     // Atualize o estado do componente App com o valor do Header
     setAppState(newValue);
   }
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth', // Isso permite a rolagem suave
+    });
+  };
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -74,6 +82,10 @@ export function App() {
                 <span>Desenvolvido por </span>
                 <a href="#">Brunno Costa</a>
             </footer>
+
+            <button onClick={scrollToTop} className={style.scrollToTopButton}>
+                <RxChevronUp size={30}/>
+            </button>
           </main>
         </>
       )}

@@ -36,7 +36,7 @@ export function Plans({isDarkTheme}) {
 
 
     return (
-        <section className={style.section +  ` ${isDarkTheme ? style.dark : style.light}`}>
+        <section id='Planos' className={style.section +  ` ${isDarkTheme ? style.dark : style.light}`}>
             <div ref={elementoRefContainer} className={` ${isVisible ? style.container : style.fade}`}>
                 <header className={style.header}>
                     <h2>Nossos planos</h2>

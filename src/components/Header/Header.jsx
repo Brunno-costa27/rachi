@@ -45,16 +45,16 @@ export function Header({ onChange , onChangeToggle, outro}) {
            <div className={style.menu}>
                    <ul className={isDarkTheme ? style.dark : style.light}>
                       <li>
-                        <a href="Funcionalidades">Funcionalidades</a>
+                        <a href="#Funcionalidades">Funcionalidades</a>
                       </li>
                       <li>
-                        <a href="App">App</a>
+                        <a href="#App">App</a>
                       </li>
                       <li>
-                      <a href="Planos">Planos</a>
+                      <a href="#Planos">Planos</a>
                       </li>
                       <li>
-                        <a href="Contato">Contato</a>
+                        <a href="#Contato">Contato</a>
                       </li>
                       <div className={isDarkTheme ? style.dark : style.light}>
                         <label className={style.themeToggle}>
@@ -85,16 +85,16 @@ export function Header({ onChange , onChangeToggle, outro}) {
 
             <ul>
               <li>
-                <a href="Funcionalidades">Funcionalidades</a>
+                <a href="#Funcionalidades">Funcionalidades</a>
               </li>
               <li>
-                <a href="App">App</a>
+                <a href="#App">App</a>
               </li>
               <li>
-              <a href="Planos">Planos</a>
+              <a href="#Planos">Planos</a>
               </li>
               <li>
-                <a href="Contato">Contato</a>
+                <a href="#Contato">Contato</a>
               </li>
 
               <div className={isDarkTheme ? style.dark : style.light}>

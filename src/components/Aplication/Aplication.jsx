@@ -37,7 +37,7 @@ export function Aplication({ isDarkTheme }) {
 
 
     return (
-        <section className={style.section +  ` ${isDarkTheme ? style.dark : style.light}`}>
+        <section id="App" className={style.section +  ` ${isDarkTheme ? style.dark : style.light}`}>
 
             <div ref={elementoRefContainer} className={` ${isVisible ? style.container : style.fade}`}>
 

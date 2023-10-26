@@ -33,7 +33,7 @@ export function Funcionality({ isDarkTheme }) {
     }, []);
 
     return (
-        <section className={style.section + ` ${isDarkTheme ? style.dark : style.light}`}>
+        <section id='Funcionalidades' className={style.section + ` ${isDarkTheme ? style.dark : style.light}`}>
             <h2 className={` ${isVisible ? style.title : style.fade}`}>Como funciona</h2>
             <div ref={elementoRefContainer } className={` ${isVisible ? style.container : style.fade}`}>
                 <div>
